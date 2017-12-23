@@ -1,0 +1,15 @@
+language: rust
+sudo: false
+cache: cargo
+rust: stable
+os: linux
+
+script:
+  - make mdbook
+  - make build
+
+# before_deploy:
+#   - bash ci/before_deploy.sh
+#
+# deploy:
+#   ...

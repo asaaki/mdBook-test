@@ -1,0 +1,11 @@
+[book]
+title = "mdBook Test"
+description = "The example book covers examples."
+authors = ["Christoph Grabo", "and friends"]
+source = "src"
+
+[output.html]
+destination = "book"
+curly-quotes = true
+mathjax-support = true
+theme = "ayu"
