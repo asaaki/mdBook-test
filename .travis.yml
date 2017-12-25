@@ -7,9 +7,10 @@ os: linux
 jobs:
   include:
     - stage: publish
-      script: "export PATH=$PATH:$HOME/.cargo/bin"
-      script: cargo install mdbook
-      script: mdbook build
+      script: 
+        - cargo install mdbook
+        - mdbook build
+      # - export PATH=$PATH:$HOME/.cargo/bin
       deploy:
         provider: pages
         skip_cleanup: true
