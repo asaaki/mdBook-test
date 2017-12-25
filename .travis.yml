@@ -7,14 +7,12 @@ os: linux
 jobs:
   include:
     - stage: publish
+      if: branch = master
       script: 
         - cargo install mdbook
         - mdbook build
-      # - export PATH=$PATH:$HOME/.cargo/bin
       deploy:
         provider: pages
         skip_cleanup: true
         github_token: $GITHUB_TOKEN
         local_dir: ./book
-        on:
-          branch: master
