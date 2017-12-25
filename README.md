@@ -10,9 +10,9 @@ mdBook test repo
 cargo install mdbook
 ```
 
-- <https://github.com/rust-lang-nursery/mdBook/releases/download/0.0.21/mdBook-0.0.21-x86_64-unknown-linux-gnu.tar.gz>
-- <https://github.com/rust-lang-nursery/mdBook/releases/download/0.0.21/mdBook-0.0.21-x86_64-unknown-linux-musl.tar.gz>
-- <https://github.com/rust-lang-nursery/mdBook/releases/download/0.0.21/mdBook-0.0.21-x86_64-apple-darwin.tar.gz>
+- <https://github.com/rust-lang-nursery/mdBook/releases/download/0.0.28/mdBook-0.0.28-x86_64-unknown-linux-gnu.tar.gz>
+- <https://github.com/rust-lang-nursery/mdBook/releases/download/0.0.28/mdBook-0.0.28-x86_64-unknown-linux-musl.tar.gz>
+- <https://github.com/rust-lang-nursery/mdBook/releases/download/0.0.28/mdBook-0.0.28-x86_64-apple-darwin.tar.gz>
 
 ```
 https://github.com/ \
