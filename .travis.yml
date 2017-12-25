@@ -8,9 +8,7 @@ jobs:
   include:
     - stage: publish
       if: branch = master
-      script: 
-        - command -v mdbook >/dev/null 2>&1 || cargo install mdbook
-        - mdbook build
+      script: make ci
       deploy:
         provider: pages
         skip_cleanup: true
