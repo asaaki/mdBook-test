@@ -1,5 +1,4 @@
-default:
-	@echo Nope.
+all: ci-publish
 
 book:
 	@mdbook build
