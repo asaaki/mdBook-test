@@ -7,8 +7,8 @@ os: linux
 jobs:
   include:
     - stage: publish
-      script: make mdbook
-      script: make book
+      script: cargo install mdbook
+      script: mdbook build
       deploy:
         provider: pages
         skip_cleanup: true
