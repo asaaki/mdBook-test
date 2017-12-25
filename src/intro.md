@@ -32,12 +32,12 @@ jobs:
 
 ```makefile
 book:
-	@mdbook build
+  @mdbook build
 
 mdbook: ${HOME}/.cargo/bin/mdbook
 
 ${HOME}/.cargo/bin/mdbook:
-	cargo install mdbook
+  cargo install mdbook
 
 ci: ci-publish
 
