@@ -1,31 +1,39 @@
-all: ci-publish
+MDBOOK = mdbook
+MDBOOK_BIN = ${HOME}/.cargo/bin/${MDBOOK}
+DOCKER_NAME = mdbook-test
+DOCKER_TAG = latest
+DOCKER_REF = ${DOCKER_NAME}:${DOCKER_TAG}
 
-book:
-	@mdbook build
+all: book
 
-init:
-	@mdbook init
+book: build
 
-watch:
-	@mdbook watch
+build: ${MDBOOK}
+	@${MDBOOK} build
 
-serve:
-	@mdbook serve
+init: ${MDBOOK}
+	@${MDBOOK} init
 
-mdbook: ${HOME}/.cargo/bin/mdbook
+watch: ${MDBOOK}
+	@${MDBOOK} watch
 
-${HOME}/.cargo/bin/mdbook:
-	cargo install mdbook
+serve: ${MDBOOK}
+	@${MDBOOK} serve
+
+mdbook: ${MDBOOK_BIN}
+
+${MDBOOK_BIN}:
+	cargo install ${MDBOOK}
 
 docker-image:
-	docker build -t mdbook-test:latest .
+	docker build -t ${DOCKER_REF} .
 
 docker-serve:
-	docker run --rm -p 8080:80 mdbook-test:latest
+	docker run --rm -p 8080:80 ${DOCKER_REF}
 
 ci: ci-publish
 
-ci-publish: mdbook book add-dummy-readme
+ci-publish: ${MDBOOK} book add-dummy-readme
 
 add-dummy-readme:
 	@echo "Release of <https://github.com/asaaki/mdBook-test/tree/master>" > book/README.md
