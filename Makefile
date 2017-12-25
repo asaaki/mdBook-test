@@ -25,4 +25,7 @@ docker-serve:
 
 ci: ci-publish
 
-ci-publish: mdbook book
+ci-publish: mdbook book add-dummy-readme
+
+add-dummy-readme:
+	@echo "Release of <https://github.com/asaaki/mdBook-test/tree/master>" > book/README.md
