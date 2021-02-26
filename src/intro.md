@@ -7,25 +7,40 @@
 
 ## How this is build
 
-### .travis.yml
+### .github/workflows/ci.yml
 
 ```yml
-language: rust
-sudo: false
-cache: cargo
-rust: stable
-os: linux
+name: "[CI] Publish to GH Pages"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  MDBOOK_BIN: /home/runner/toolbin/mdbook
 
 jobs:
-  include:
-    - stage: publish
-      if: branch = master
-      script: make ci
-      deploy:
-        provider: pages
-        skip_cleanup: true
-        github_token: $GITHUB_TOKEN
-        local_dir: ./book
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup mdBook
+      uses: peaceiris/actions-mdbook@v1
+      with:
+        mdbook-version: 'latest'
+
+    - name: Build
+      run: make ci
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./book
+
 ```
 
 ### Makefile (excerpt)
@@ -34,12 +49,5 @@ jobs:
 book:
   @mdbook build
 
-mdbook: ${HOME}/.cargo/bin/mdbook
-
-${HOME}/.cargo/bin/mdbook:
-  cargo install mdbook
-
-ci: ci-publish
-
-ci-publish: mdbook book
+ci: book
 ```
