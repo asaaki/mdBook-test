@@ -1,8 +1,8 @@
-MDBOOK = mdbook
-MDBOOK_BIN = ${HOME}/.cargo/bin/${MDBOOK}
+MDBOOK      = mdbook
+MDBOOK_BIN ?= ${HOME}/.cargo/bin/${MDBOOK}
 DOCKER_NAME = mdbook-test
-DOCKER_TAG = latest
-DOCKER_REF = ${DOCKER_NAME}:${DOCKER_TAG}
+DOCKER_TAG  = latest
+DOCKER_REF  = ${DOCKER_NAME}:${DOCKER_TAG}
 
 all: book
 
