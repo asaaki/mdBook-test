@@ -1,4 +1,4 @@
-# mdBook-test [![Build Status](https://travis-ci.org/asaaki/mdBook-test.svg?branch=master)](https://travis-ci.org/asaaki/mdBook-test)
+# mdBook-test
 
 mdBook test repo
 
