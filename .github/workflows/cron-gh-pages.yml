@@ -1,0 +1,19 @@
+name: "[CRON] Publish to GH Pages"
+
+on:
+  schedule:
+    - cron:  '42 23 5 * *'
+jobs:
+  build:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: make ci
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./book
