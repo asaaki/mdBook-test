@@ -1,8 +1,11 @@
-name: "[CRON] Publish to GH Pages"
+name: "[CI] Publish to GH Pages"
 
 on:
-  schedule:
-    - cron:  '42 23 5 * *'
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
   build:
     runs-on: ubuntu-20.04
