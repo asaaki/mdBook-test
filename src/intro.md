@@ -5,7 +5,7 @@
 
 ---
 
-## How this is build
+## How this is build (simplified)
 
 ### .github/workflows/ci.yml
 
@@ -33,7 +33,7 @@ jobs:
         mdbook-version: 'latest'
 
     - name: Build
-      run: make ci
+      run: mdbook build
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
@@ -41,13 +41,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./book
 
-```
-
-### Makefile (excerpt)
-
-```makefile
-book:
-  @mdbook build
-
-ci: book
 ```
