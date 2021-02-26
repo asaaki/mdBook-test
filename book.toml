@@ -16,3 +16,11 @@ build-dir = "book"
 [output.html]
 git-repository-url = "https://github.com/asaaki/mdBook-test"
 curly-quotes = true
+mathjax-support = true
+
+[output.html.print]
+enable = true
+
+[output.html.fold]
+enable = true
+level = 1
