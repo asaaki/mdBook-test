@@ -11,15 +11,16 @@ mdBook test repo
 cargo install mdbook
 ```
 
-<!--
-- <https://github.com/rust-lang-nursery/mdBook/releases/download/0.0.28/mdBook-0.0.28-x86_64-unknown-linux-gnu.tar.gz>
-- <https://github.com/rust-lang-nursery/mdBook/releases/download/0.0.28/mdBook-0.0.28-x86_64-unknown-linux-musl.tar.gz>
-- <https://github.com/rust-lang-nursery/mdBook/releases/download/0.0.28/mdBook-0.0.28-x86_64-apple-darwin.tar.gz>
+### Interesting extensions
 
-```
-https://github.com/ \
-  rust-lang-nursery/ \
-  mdBook/releases/download/ \
-  $(MDBOOK_VER)/mdBook-$(MDBOOK_VER)-$(ARCH_OS).tar.gz
-```
--->
+* https://github.com/avitex/mdbook-tera
+* https://github.com/badboy/mdbook-mermaid
+* https://github.com/badboy/mdbook-open-on-gh
+* https://github.com/badboy/mdbook-toc
+* https://github.com/Byron/termbook
+* https://github.com/fzzr-/mdbook-svgbob
+* https://github.com/knightflower1989/mdbook-auto-gen-summary
+* https://github.com/lbeckman314/mdbook-latex
+* https://github.com/Michael-F-Bryan/mdbook-epub
+* https://github.com/Michael-F-Bryan/mdbook-linkcheck
+* https://github.com/sytsereitsma/mdbook-plantuml
