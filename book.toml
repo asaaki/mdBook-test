@@ -1,11 +1,18 @@
+# https://rust-lang.github.io/mdBook/format/config.html
+
 [book]
 title = "mdBook Test"
 description = "The example book covers examples."
 authors = ["Christoph Grabo", "and friends"]
-source = "src"
+language = "en"
+# source = "src"
+
+[rust]
+edition = "2018"
+
+[build]
+build-dir = "book"
 
 [output.html]
-destination = "book"
+git-repository-url = "https://github.com/asaaki/mdBook-test"
 curly-quotes = true
-mathjax-support = true
-theme = "ayu"
